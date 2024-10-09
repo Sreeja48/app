@@ -1,8 +1,8 @@
 
 pipeline {
     agent any
-    environment {
-        NODEJS_HOME = tool 'NodeJS 16' // Ensure this matches the tool name in Jenkins
+environment {
+        NODEJS_HOME = tool 'NodeJS 16' // Set NodeJS version
         PATH = "${NODEJS_HOME}/bin:${env.PATH}"
     }
     stages {
