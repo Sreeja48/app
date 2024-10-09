@@ -1,7 +1,8 @@
+
 pipeline {
     agent any
     environment {
-        NODEJS_HOME = tool 'NodeJS 16' // Set NodeJS version
+        NODEJS_HOME = tool 'NodeJS 16' // Ensure this matches the tool name in Jenkins
         PATH = "${NODEJS_HOME}/bin:${env.PATH}"
     }
     stages {
@@ -15,12 +16,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        // Commented out the Run Tests stage
-        // stage('Run Tests') {
-        //     steps {
-        //         sh 'npm test'
-        //     }
-        // }
         stage('Build') {
             steps {
                 echo 'Building the application...'
